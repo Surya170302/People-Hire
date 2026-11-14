@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PeopleHire | Job Portal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="navbar">
+  <a href="#" class="logo"><i class="fa-solid fa-briefcase"></i> People<span>Hire</span></a>
+  <button class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+  <nav id="navMenu">
+    <a href="#home">Home</a>
+    <a href="#jobs">Find Jobs</a>
+    <a href="#categories">Categories</a>
+    <a href="#applications">My Applications</a>
+  </nav>
+  <a href="#jobs" class="nav-btn">Explore Jobs</a>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="tag">YOUR CAREER STARTS HERE</span>
+    <h1>Find Your <span>Dream Job</span><br>Build Your Future</h1>
+    <p>Discover exciting opportunities and connect with companies that match your skills.</p>
+
+    <form class="search-box" id="searchForm">
+      <div class="search-field">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="keyword" placeholder="Job title or company">
+      </div>
+      <div class="search-field">
+        <i class="fa-solid fa-location-dot"></i>
+        <input id="location" placeholder="Location">
+      </div>
+      <button type="submit">Search Jobs</button>
+    </form>
+    <p class="popular">Popular: <span>Developer</span> <span>Designer</span> <span>Data Analyst</span></p>
+  </div>
+  <div class="hero-image">
+    <div class="hero-icon"><i class="fa-solid fa-user-tie"></i></div>
+    <div class="floating-card"><i class="fa-solid fa-circle-check"></i> Find your next opportunity</div>
+  </div>
+</section>
+
+<section class="stats">
+  <div><h2 id="jobCount">0+</h2><p>Available Jobs</p></div>
+  <div><h2>50+</h2><p>Companies</p></div>
+  <div><h2>100+</h2><p>Career Opportunities</p></div>
+</section>
+
+<section class="section" id="categories">
+  <div class="section-heading">
+    <span>EXPLORE CAREERS</span>
+    <h2>Popular Job Categories</h2>
+  </div>
+  <div class="category-grid">
+    <button class="category-card" data-category="IT & Software"><i class="fa-solid fa-code"></i><h3>IT & Software</h3><p>Development jobs</p></button>
+    <button class="category-card" data-category="Design"><i class="fa-solid fa-palette"></i><h3>Design</h3><p>Creative careers</p></button>
+    <button class="category-card" data-category="Marketing"><i class="fa-solid fa-chart-line"></i><h3>Marketing</h3><p>Growth opportunities</p></button>
+    <button class="category-card" data-category="Finance"><i class="fa-solid fa-coins"></i><h3>Finance</h3><p>Financial careers</p></button>
+  </div>
+</section>
+
+<section class="section jobs-section" id="jobs">
+  <div class="section-heading">
+    <span>CAREER OPPORTUNITIES</span>
+    <h2>Latest Job Openings</h2>
+    <p>Find the right opportunity for your career.</p>
+  </div>
+
+  <div class="filters">
+    <input id="filterKeyword" placeholder="Search job or company">
+    <select id="categoryFilter">
+      <option value="">All Categories</option>
+      <option>IT & Software</option>
+      <option>Design</option>
+      <option>Marketing</option>
+      <option>Finance</option>
+    </select>
+    <select id="typeFilter">
+      <option value="">All Job Types</option>
+      <option>Full Time</option>
+      <option>Part Time</option>
+      <option>Internship</option>
+      <option>Remote</option>
+    </select>
+    <button id="clearFilters">Clear Filters</button>
+  </div>
+
+  <div class="job-grid" id="jobList"></div>
+  <p class="empty" id="emptyMessage" hidden>No matching jobs found. Try another search.</p>
+</section>
+
+<section class="section applications-section" id="applications">
+  <div class="section-heading">
+    <span>YOUR CAREER ACTIVITY</span>
+    <h2>My Applications & Saved Jobs</h2>
+  </div>
+  <div class="application-tabs">
+    <button class="tab active" data-tab="applied">Applied Jobs</button>
+    <button class="tab" data-tab="saved">Saved Jobs</button>
+  </div>
+  <div id="applicationList" class="application-list"></div>
+</section>
+
+<footer>
+  <a href="#" class="logo">Smart<span>Hire</span></a>
+  <p>Connecting talented people with great opportunities.</p>
+  <p>© 2026 SmartHire. Student Portfolio Project.</p>
+</footer>
+
+<div class="modal" id="jobModal">
+  <div class="modal-content">
+    <button class="close-modal" id="closeModal">&times;</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
